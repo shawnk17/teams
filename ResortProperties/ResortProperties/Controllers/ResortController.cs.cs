@@ -14,19 +14,19 @@ namespace ResortProperties.Controllers
         {
             _ResortPostRepo = blogPostsRepo;
         }
-        // GET: Blog
+        // GET: Resort
         public ActionResult Index()
         {
             return View(_ResortPostRepo.ListAll());
         }
 
-        // GET: Blog/Details/5
+        // GET: Resort/Details/5
         public ActionResult Details(int id)
         {
             return View(_ResortPostRepo.GetById(id));
         }
 
-        // GET: Blog/Create
+        // GET: Resort/Create
         public ActionResult Create()
         {
             return View(new ResortPost
@@ -56,13 +56,13 @@ namespace ResortProperties.Controllers
             return View(newResortPost);
         }
 
-        // GET: Blog/Edit/5
+        // GET: Resort/Edit/5
         public ActionResult Edit(int id)
         {
             return View(_ResortPostRepo.GetById(id));
         }
 
-        // POST: Blog/Edit/5
+        // POST: Resort/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int id, ResortPost editedResortPost)
@@ -80,13 +80,13 @@ namespace ResortProperties.Controllers
             return View(editedResortPost);
         }
 
-        // GET: Blog/Delete/5
+        // GET: Resort/Delete/5
         public ActionResult Delete(int id)
         {
             return View(_ResortPostRepo.GetById(id));
         }
 
-        // POST: Blog/Delete/5
+        // POST: Resort/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Delete(int id, ResortPost ResortPostDelete)
