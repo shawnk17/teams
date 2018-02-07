@@ -62,10 +62,5 @@ namespace Infrastructure
         {
             return _ResortPost;
         }
-
-        List<ResortPost> IResortPostsRepo.ListAll()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

@@ -32,6 +32,8 @@ namespace Infrastructure
             }
         }
 
+
+
         public void Add(ResortPost newpost)
         {
             newpost.Id = _nextId++;
@@ -61,17 +63,17 @@ namespace Infrastructure
         }
         public ResortPost GetPostByPermalink(string permalink)
         {
-            return _ResortRepoFs.Find(t => t.Permalink == permalink);
+            return _ResortPostFs.Find(t => t.Permalink == permalink);
         }
 
         public List<ResortPost> ListAll()
         {
-            return _ResortRepoFs;
+            return _ResortPostFs;
         }
 
         public ResortPost GetById(int id)
         {
-            return _ResortRepoFs.Find(t => t.Id == id);
+            return _ResortPostFs.Find(t => t.Id == id);
         }
 
         private List<ResortPost> LoadFile()
@@ -80,7 +82,7 @@ namespace Infrastructure
             {
                 string rawList = File.ReadAllText(_fileFullPath);
 
-                return JsonConvert.DeserializeObject<List<ResortPost>>(rawList);
+                return JsonConvert.DeserializeObject<List<BlogPost>>(rawList);
             }
             catch (Exception)
             {
@@ -97,7 +99,7 @@ namespace Infrastructure
                 {
                     Directory.CreateDirectory(PATH);
                 }
-                string rawListStr = JsonConvert.SerializeObject(_ResortRepoFs);
+                string rawListStr = JsonConvert.SerializeObject(_BlogRepoFs);
 
                 File.WriteAllText(_fileFullPath, rawListStr);
 

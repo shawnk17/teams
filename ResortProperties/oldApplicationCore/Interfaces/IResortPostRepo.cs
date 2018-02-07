@@ -7,7 +7,7 @@ namespace ApplicationCore.Interfaces
 {
     public interface IResortPostsRepo
     {
-        List<ResortPost> ListAll();
+        IResortRepository<ResortPost> ListAll();
         ResortPost GetPostByPermalink(string permalink);
 
         void Add(ResortPost newpost);

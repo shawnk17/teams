@@ -1,43 +1,29 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.Encodings.Web;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
-using ResortProperties.Models;
-using ResortProperties.Models.ManageViewModels;
-using ResortProperties.Services;
-using Microsoft.AspNetCore.Mvc;
 using ApplicationCore.Entities;
 using ApplicationCore.Interfaces;
-
+using Microsoft.AspNetCore.Mvc;
 
 namespace ResortProperties.Controllers
 {
-    public class Resort : Controller
-    {
-        private readonly IResortPostsRepo _blogPostRepo;
 
-        public Resort(IResortPostsRepo blogPostsRepo)
+    public class ResortController : Controller
+    {
+        private readonly IResortPostsRepo _ResortPostRepo;
+
+        public ResortController(IResortPostsRepo blogPostsRepo)
         {
-            _blogPostRepo = blogPostsRepo;
+            _ResortPostRepo = blogPostsRepo;
         }
         // GET: Blog
         public ActionResult Index()
         {
-            return View(_blogPostRepo.ListAll());
+            return View(_ResortPostRepo.ListAll());
         }
 
         // GET: Blog/Details/5
         public ActionResult Details(int id)
         {
-            return View(_blogPostRepo.GetById(id));
+            return View(_ResortPostRepo.GetById(id));
         }
 
         // GET: Blog/Create
@@ -49,7 +35,7 @@ namespace ResortProperties.Controllers
             });
         }
 
-        // POST: Blog/Create
+        // POST: Resort/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(ResortPost newResortPost)
@@ -58,7 +44,7 @@ namespace ResortProperties.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    _blogPostRepo.Add(newResortPost);
+                    _ResortPostRepo.Add(newResortPost);
 
                     return RedirectToAction(nameof(Index));
                 }
@@ -73,17 +59,17 @@ namespace ResortProperties.Controllers
         // GET: Blog/Edit/5
         public ActionResult Edit(int id)
         {
-            return View(_blogPostRepo.GetById(id));
+            return View(_ResortPostRepo.GetById(id));
         }
 
         // POST: Blog/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, ResortPost editedBlogPost)
+        public ActionResult Edit(int id, ResortPost editedResortPost)
         {
             try
             {
-                _blogPostRepo.Edit(editedBlogPost);
+                _ResortPostRepo.Edit(editedResortPost);
 
                 return RedirectToAction(nameof(Index));
             }
@@ -91,23 +77,23 @@ namespace ResortProperties.Controllers
             {
                 // TODO Log the exception
             }
-            return View(editedBlogPost);
+            return View(editedResortPost);
         }
 
         // GET: Blog/Delete/5
         public ActionResult Delete(int id)
         {
-            return View(_blogPostRepo.GetById(id));
+            return View(_ResortPostRepo.GetById(id));
         }
 
         // POST: Blog/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, ResortPost blogPostDelete)
+        public ActionResult Delete(int id, ResortPost ResortPostDelete)
         {
             try
             {
-                _blogPostRepo.Delete(blogPostDelete);
+                _ResortPostRepo.Delete(ResortPostDelete);
 
                 return RedirectToAction(nameof(Index));
             }
@@ -115,7 +101,7 @@ namespace ResortProperties.Controllers
             {
                 // TODO Log the exception
             }
-            return View(blogPostDelete);
+            return View(ResortPostDelete);
         }
     }
 }
