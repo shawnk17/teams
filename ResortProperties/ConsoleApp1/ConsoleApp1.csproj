@@ -1,0 +1,51 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="obj\Debug\netstandard2.0\ApplicationCore.AssemblyInfo.cs" />
+    <Compile Include="obj\Release\netstandard2.0\ApplicationCore.AssemblyInfo.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="obj\bin\Debug\netstandard2.0\ApplicationCore.deps.json">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="obj\bin\Release\netstandard2.0\ApplicationCore.deps.json">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="obj\project.assets.json">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="obj\ApplicationCore.csproj.nuget.cache" />
+    <None Include="obj\ApplicationCore.csproj.nuget.g.props" />
+    <None Include="obj\ApplicationCore.csproj.nuget.g.targets" />
+    <None Include="obj\bin\Debug\netstandard2.0\ApplicationCore.dll" />
+    <None Include="obj\bin\Debug\netstandard2.0\ApplicationCore.pdb" />
+    <None Include="obj\bin\Release\netstandard2.0\ApplicationCore.dll" />
+    <None Include="obj\bin\Release\netstandard2.0\ApplicationCore.pdb" />
+    <None Include="obj\bin\Release\netstandard2.0\System.ComponentModel.Annotations.dll" />
+    <None Include="obj\bin\Release\netstandard2.0\System.ComponentModel.Annotations.xml" />
+    <None Include="obj\Debug\netstandard2.0\ApplicationCore.AssemblyInfoInputs.cache" />
+    <None Include="obj\Debug\netstandard2.0\ApplicationCore.csproj.CopyComplete" />
+    <None Include="obj\Debug\netstandard2.0\ApplicationCore.csproj.CoreCompileInputs.cache" />
+    <None Include="obj\Debug\netstandard2.0\ApplicationCore.csproj.FileListAbsolute.txt" />
+    <None Include="obj\Debug\netstandard2.0\ApplicationCore.csprojResolveAssemblyReference.cache" />
+    <None Include="obj\Debug\netstandard2.0\ApplicationCore.dll" />
+    <None Include="obj\Debug\netstandard2.0\ApplicationCore.pdb" />
+    <None Include="obj\Release\netstandard2.0\ApplicationCore.AssemblyInfoInputs.cache" />
+    <None Include="obj\Release\netstandard2.0\ApplicationCore.csproj.CopyComplete" />
+    <None Include="obj\Release\netstandard2.0\ApplicationCore.csproj.CoreCompileInputs.cache" />
+    <None Include="obj\Release\netstandard2.0\ApplicationCore.csproj.FileListAbsolute.txt" />
+    <None Include="obj\Release\netstandard2.0\ApplicationCore.csprojResolveAssemblyReference.cache" />
+    <None Include="obj\Release\netstandard2.0\ApplicationCore.dll" />
+    <None Include="obj\Release\netstandard2.0\ApplicationCore.pdb" />
+  </ItemGroup>
+
+</Project>
