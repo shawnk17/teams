@@ -50,7 +50,7 @@ namespace ResortProperties
 
             // Add application services.
             services.AddTransient<IEmailSender, EmailSender>();
-            services.AddScoped<IResortPostsRepo, ResortRepoFs>();
+            services.AddScoped<IResortPostsRepo, ResortRepoEF>();
             services.AddMvc();
         }
 
