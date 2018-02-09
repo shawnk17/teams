@@ -47,7 +47,7 @@ namespace Infrastructure
 
             SaveFile();
         }
-        public void Edit(ResortPost newpost)
+        public void Update(ResortPost newpost)
         {
             var newResortPost = GetById(newpost.Id);
 
@@ -104,14 +104,8 @@ namespace Infrastructure
             }
             catch (Exception)
             {
-
-                
+                                
             }
-        }
-
-        public void Details(ResortPost newpost)
-        {
-            throw new NotImplementedException();
         }
     }
 }

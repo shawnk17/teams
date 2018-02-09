@@ -49,7 +49,7 @@ namespace ResortProperties.Controllers
                     return RedirectToAction(nameof(Index));
                 }
             }
-            catch
+            catch (Exception ex)
             {
 
             }
@@ -69,7 +69,7 @@ namespace ResortProperties.Controllers
         {
             try
             {
-                _ResortPostRepo.Edit(editedResortPost);
+                _ResortPostRepo.Update(editedResortPost);
 
                 return RedirectToAction(nameof(Index));
             }

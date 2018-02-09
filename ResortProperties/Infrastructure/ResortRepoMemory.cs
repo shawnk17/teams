@@ -10,7 +10,7 @@ namespace Infrastructure
     {
         private static List<ResortPost> _ResortPost;
         private static int _nextId = 1;
-        
+
         public ResortRepoMemory()
         {
             if (_ResortPost == null)
@@ -32,12 +32,7 @@ namespace Infrastructure
             _ResortPost.Remove(origResortPost);
         }
 
-        public void Details(ResortPost newpost)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Edit(ResortPost newpost)
+        public void Update(ResortPost newpost)
         {
             var newResortPost = GetById(newpost.Id);
 

@@ -9,11 +9,11 @@ namespace ApplicationCore.Interfaces
     {
         List<ResortPost> ListAll();
         ResortPost GetPostByPermalink(string permalink);
+        ResortPost GetById(int id);
 
         void Add(ResortPost newpost);
-        void Edit(ResortPost newpost);
+        void Update(ResortPost newpost);
         void Delete(ResortPost newpost);
-        void Details(ResortPost newpost);
-        ResortPost GetById(int id);
+            
     }
 }
